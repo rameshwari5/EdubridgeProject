@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Orders Information</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<br>
+		<hr>
+		<h2>Save Orders</h2>
+
+		<form action="#" th:action="@{/saveOrders}" th:object="${orders}" method="POST">
+			
+			<input type="text" th:field="*{Title}"
+				placeholder="Title" class="form-control mb-4 col-4"
+				required autofocus="autofocus">
+				
+				<input type="text" th:field="*{Booking_date}"
+				placeholder="yyyy/mm/dd" class="form-control mb-4 col-4"
+				required autofocus="autofocus">
+				
+				<input type="number" th:field="*{Quantity}"
+				placeholder="Quantity" class="form-control mb-4 col-4"
+				required autofocus="autofocus">
+				
+				
+				
+				<button type="submit" class="btn btn-primary btn-sm mb-3"> Save Orders</button>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/orderForm}"> Back to Orders List</a>
+	</div>
+
+</body>
+</html>
